@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="144117" started-at="2020-05-02T10:06:06Z" finished-at="2020-05-02T10:08:30Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="144117" started-at="2020-05-02T10:06:06Z" finished-at="2020-05-02T10:08:30Z">
+      <class name="HardCodedSenario.Meeting_Test">
+        <test-method status="PASS" signature="BMTest()[pri:0, instance:HardCodedSenario.Meeting_Test@1e88b3c]" name="BMTest" is-config="true" duration-ms="21862" started-at="2020-05-02T15:36:06Z" finished-at="2020-05-02T15:36:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BMTest -->
+        <test-method status="PASS" signature="Schedule_Meeting_Test()[pri:0, instance:HardCodedSenario.Meeting_Test@1e88b3c]" name="Schedule_Meeting_Test" duration-ms="119889" started-at="2020-05-02T15:36:28Z" finished-at="2020-05-02T15:38:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Schedule_Meeting_Test -->
+        <test-method status="PASS" signature="AMTest()[pri:0, instance:HardCodedSenario.Meeting_Test@1e88b3c]" name="AMTest" is-config="true" duration-ms="2338" started-at="2020-05-02T15:38:28Z" finished-at="2020-05-02T15:38:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AMTest -->
+      </class> <!-- HardCodedSenario.Meeting_Test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
