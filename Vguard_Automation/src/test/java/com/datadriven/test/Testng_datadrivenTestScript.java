@@ -12,7 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.test.utility.TestUtil;
+import com.test.utility.Meeting_Util;
 
 public class Testng_datadrivenTestScript {
 
@@ -35,7 +35,7 @@ public class Testng_datadrivenTestScript {
 	public Iterator<Object[]> GetTestData()
 	{
 		
-		ArrayList<Object[]>testdata=TestUtil.GetDataFromExcel();
+		ArrayList<Object[]>testdata=Meeting_Util.GetDataFromExcel();
 		return testdata.iterator();
 		
 		

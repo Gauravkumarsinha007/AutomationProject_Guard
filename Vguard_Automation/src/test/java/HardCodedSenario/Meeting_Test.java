@@ -5,6 +5,7 @@ import java.awt.Robot;
 import java.awt.event.KeyEvent;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
@@ -153,13 +154,239 @@ public class Meeting_Test {
 		driver.findElement(By.xpath("//label[@class='PointerHand']")).click();
 		Thread.sleep(2000);
 		
-		
 		//Submit
 		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
 		Thread.sleep(10000);
 
 	
 	}
+
+	@Test(priority=2,enabled=false)
+	public void Schedule_Meeting_CloseTest() throws InterruptedException, AWTException
+	{
+		//Enter User name 
+		driver.findElement(By.id("txtUserName")).sendKeys("demogaurav007");
+		Thread.sleep(1000);
+		//Enter Password
+		driver.findElement(By.id("txtPassword")).sendKeys("admin");
+		Thread.sleep(5000);
+		//Click on submit
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(10000);
+		
+		//click on side bar
+		driver.findElement(By.xpath("//a[@class='nav-link toggleMenubar']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnBack")).click();
+		Thread.sleep(1000);
+	
+		//Click on meeting 
+		driver.findElement(By.xpath("//span[text()='Meeting']")).click();
+		Thread.sleep(1000);
+		
+		//Schedule Meeting
+		driver.findElement(By.xpath("//span[text()='My Meeting']")).click();
+		Thread.sleep(10000);
+		
+		//Click on Edit Meeting 
+		driver.findElement(By.xpath("//tr[1]//a[@title='Edit']")).click();
+		Thread.sleep(5000);
+	
+		
+		//New window handle
+		String parentHandle = driver.getWindowHandle(); // get the current window handle
+		
+		for (String winHandle : driver.getWindowHandles()) {
+		driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+		}	
+		//code to do something on new window
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+
+		//Add meeting point 
+		driver.findElement(By.xpath("//a[@class='btn btn-primary waves-effect waves-light btn-xs m-t-5 pull-right']")).click();
+		Thread.sleep(2000);
+		
+		//Points
+		driver.findElement(By.xpath("//input[@name='txtCheckListName']")).sendKeys("Test Meeting point");
+		Thread.sleep(2000);
+		
+		//Save
+		driver.findElement(By.xpath("//a[@class='btn btn-icon btn-success btn-xs waves-effect waves-light m-r-5']")).click();
+		Thread.sleep(2000);
+		
+		//Meeting attendees
+		driver.findElement(By.xpath("//tbody[1]//tr[1]//td[9]//div[1]//div[1]//input[1]")).click();
+		Thread.sleep(1000);
+		
+		driver.findElement(By.xpath("//tbody[2]//tr[1]//td[9]//div[1]//div[1]//input[1]")).click();
+		Thread.sleep(1000);
+
+		driver.findElement(By.xpath("//tbody[3]//tr[1]//td[9]//div[1]//div[1]//input[1]")).click();
+		Thread.sleep(1000);
+
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+
+		//Authorization Action
+		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
+		Authorizationaction.selectByVisibleText("Completed");
+		Thread.sleep(2000);
+		
+		//Comment
+		driver.findElement(By.id("txtComment")).sendKeys("Test comment Completed");
+		Thread.sleep(1000);
+			
+		//Submit 
+		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
+		Thread.sleep(5000);
+		
+		driver.close(); // close newly opened window when done with it
+		driver.switchTo().window(parentHandle); // switch back to the original window
+		
+	}
+
+	@Test(priority=3,enabled=false)
+	public void Schedule_Meeting_PostPone_Test() throws InterruptedException, AWTException
+	{
+		//Enter User name 
+		driver.findElement(By.id("txtUserName")).sendKeys("demogaurav007");
+		Thread.sleep(1000);
+		//Enter Password
+		driver.findElement(By.id("txtPassword")).sendKeys("admin");
+		Thread.sleep(5000);
+		//Click on submit
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(10000);
+		
+		//click on side bar
+		driver.findElement(By.xpath("//a[@class='nav-link toggleMenubar']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnBack")).click();
+		Thread.sleep(1000);
+	
+		//Click on meeting 
+		driver.findElement(By.xpath("//span[text()='Meeting']")).click();
+		Thread.sleep(1000);
+		
+		//Schedule Meeting
+		driver.findElement(By.xpath("//span[text()='My Meeting']")).click();
+		Thread.sleep(10000);
+		
+		//Click on Edit Meeting 
+		driver.findElement(By.xpath("//tr[1]//a[@title='Edit']")).click();
+		Thread.sleep(5000);
+	
+		
+		//New window handle
+		String parentHandle = driver.getWindowHandle(); // get the current window handle
+		
+		for (String winHandle : driver.getWindowHandles()) {
+		driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+		}	
+		//code to do something on new window
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+
+		//Authorization Action
+		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
+		Authorizationaction.selectByVisibleText("Postpone");
+		Thread.sleep(2000);
+		
+		//Start Time 
+		Select StartTime = new Select(driver.findElement(By.id("ddlStartTime")));
+		StartTime.selectByVisibleText("04:45 PM");
+		Thread.sleep(2000);
+		
+		//End Time 
+		Select EndTime = new Select(driver.findElement(By.id("ddlEndTime")));
+		EndTime.selectByVisibleText("04:45 PM");
+		Thread.sleep(2000);
+
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+		
+		
+		//Comment
+		driver.findElement(By.id("txtComment")).sendKeys("Test comment Postpone");
+		Thread.sleep(1000);
+							
+		
+		//Submit 
+		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
+		Thread.sleep(5000);
+		
+		driver.close(); // close newly opened window when done with it
+		driver.switchTo().window(parentHandle); // switch back to the original window
+		
+	}
+
+	@Test(priority=4,enabled=true)
+	public void Schedule_Meeting_cancelled_Test() throws InterruptedException, AWTException
+	{
+		//Enter User name 
+		driver.findElement(By.id("txtUserName")).sendKeys("demogaurav007");
+		Thread.sleep(1000);
+		//Enter Password
+		driver.findElement(By.id("txtPassword")).sendKeys("admin");
+		Thread.sleep(5000);
+		//Click on submit
+		driver.findElement(By.xpath("//button[@type='submit']")).click();
+		Thread.sleep(10000);
+		
+		//click on side bar
+		driver.findElement(By.xpath("//a[@class='nav-link toggleMenubar']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.id("btnBack")).click();
+		Thread.sleep(1000);
+	
+		//Click on meeting 
+		driver.findElement(By.xpath("//span[text()='Meeting']")).click();
+		Thread.sleep(1000);
+		
+		//Schedule Meeting
+		driver.findElement(By.xpath("//span[text()='My Meeting']")).click();
+		Thread.sleep(10000);
+		
+		//Click on Edit Meeting 
+		driver.findElement(By.xpath("//tr[1]//a[@title='Edit']")).click();
+		Thread.sleep(5000);
+	
+		
+		//New window handle
+		String parentHandle = driver.getWindowHandle(); // get the current window handle
+		
+		for (String winHandle : driver.getWindowHandles()) {
+		driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+		}	
+		//code to do something on new window
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+
+		//Authorization Action
+		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
+		Authorizationaction.selectByVisibleText("cancelled");
+		Thread.sleep(2000);
+		
+		//Comment
+		driver.findElement(By.id("txtComment")).sendKeys("Test comment cancelled");
+		Thread.sleep(1000);
+							
+		
+		//Submit 
+		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
+		Thread.sleep(5000);
+		
+		driver.close(); // close newly opened window when done with it
+		driver.switchTo().window(parentHandle); // switch back to the original window
+		
+	}
+
+	
 	@AfterMethod
 	public void AMTest() throws InterruptedException
 	{
