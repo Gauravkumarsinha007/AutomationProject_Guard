@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="75253" started-at="2020-05-06T06:04:11Z" finished-at="2020-05-06T06:05:26Z">
+  <suite name="Default suite" duration-ms="110520" started-at="2020-05-09T06:01:28Z" finished-at="2020-05-09T06:03:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="75253" started-at="2020-05-06T06:04:11Z" finished-at="2020-05-06T06:05:26Z">
-      <class name="com.datadriven.test.MeetingCancelled_Test">
-        <test-method status="PASS" signature="BMTest()[pri:0, instance:com.datadriven.test.MeetingCancelled_Test@1fdc050]" name="BMTest" is-config="true" duration-ms="22563" started-at="2020-05-06T11:34:13Z" finished-at="2020-05-06T11:34:35Z">
+    <test name="Default test" duration-ms="110520" started-at="2020-05-09T06:01:28Z" finished-at="2020-05-09T06:03:19Z">
+      <class name="com.datadriven.test.Report_Incident_Test">
+        <test-method status="PASS" signature="BMTest()[pri:0, instance:com.datadriven.test.Report_Incident_Test@1fdc050]" name="BMTest" is-config="true" duration-ms="88552" started-at="2020-05-09T11:31:31Z" finished-at="2020-05-09T11:33:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BMTest -->
-        <test-method status="PASS" signature="Schedule_Meeting_cancelled_Test(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.datadriven.test.MeetingCancelled_Test@1fdc050]" name="Schedule_Meeting_cancelled_Test" duration-ms="49583" started-at="2020-05-06T11:34:35Z" data-provider="GetTestData" finished-at="2020-05-06T11:35:25Z">
+        <test-method status="FAIL" signature="Report_Incident_operator(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.datadriven.test.Report_Incident_Test@1fdc050]" name="Report_Incident_operator" duration-ms="14760" started-at="2020-05-09T11:33:00Z" data-provider="GetTestData" finished-at="2020-05-09T11:33:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[demogaurav007]]>
+                <![CDATA[]]>
               </value>
             </param>
             <param index="1">
@@ -25,118 +25,318 @@
             </param>
             <param index="2">
               <value>
-                <![CDATA[EHS Committee Meeting]]>
+                <![CDATA[ele]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[EHS M]]>
+                <![CDATA[ele]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Conference Hall Chavdi Unit]]>
+                <![CDATA[contr]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[03:45 PM]]>
+                <![CDATA[Test]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[03:45 PM]]>
+                <![CDATA[General]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[gaurav]]>
+                <![CDATA[Surat]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[Mathew]]>
+                <![CDATA[Test Desc for AT ]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[Test Agenda]]>
+                <![CDATA[Tets Action Now]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Ravi Kumar]]>
+                <![CDATA[Visitor]]>
               </value>
             </param>
             <param index="11">
               <value>
-                <![CDATA[Test@gmail.com]]>
+                <![CDATA[Rahul Singh]]>
               </value>
             </param>
             <param index="12">
               <value>
-                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\Image.jpg]]>
+                <![CDATA[35]]>
               </value>
             </param>
             <param index="13">
               <value>
-                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\CeilingFan.jpg]]>
+                <![CDATA[Audit Team]]>
               </value>
             </param>
             <param index="14">
               <value>
-                <![CDATA[Test Meeting point]]>
+                <![CDATA[Female]]>
               </value>
             </param>
             <param index="15">
               <value>
-                <![CDATA[Completed]]>
+                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\Image.jpg]]>
               </value>
             </param>
             <param index="16">
               <value>
-                <![CDATA[Test comment Completed]]>
+                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\CeilingFan.jpg]]>
               </value>
             </param>
             <param index="17">
               <value>
-                <![CDATA[Postpone]]>
+                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\Electric panel room.jpg]]>
               </value>
             </param>
             <param index="18">
               <value>
-                <![CDATA[04:45 PM]]>
+                <![CDATA[C:\\Users\\GAURAV\\workspace\\Vguard_Automation\\Images\\unsafe.jpg]]>
               </value>
             </param>
             <param index="19">
               <value>
-                <![CDATA[04:45 PM]]>
+                <![CDATA[demomathew]]>
               </value>
             </param>
             <param index="20">
               <value>
-                <![CDATA[Test comment Postpone]]>
+                <![CDATA[admin]]>
               </value>
             </param>
             <param index="21">
               <value>
-                <![CDATA[cancelled]]>
+                <![CDATA[CHAU/INC/2020]]>
               </value>
             </param>
             <param index="22">
               <value>
-                <![CDATA[Test comment cancelled]]>
+                <![CDATA[First Aid Case]]>
+              </value>
+            </param>
+            <param index="23">
+              <value>
+                <![CDATA[Concussions]]>
+              </value>
+            </param>
+            <param index="24">
+              <value>
+                <![CDATA[Send for further Review]]>
+              </value>
+            </param>
+            <param index="25">
+              <value>
+                <![CDATA[Test comment Incident]]>
+              </value>
+            </param>
+            <param index="26">
+              <value>
+                <![CDATA[demodharmesh]]>
+              </value>
+            </param>
+            <param index="27">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="28">
+              <value>
+                <![CDATA[Send for investigation]]>
+              </value>
+            </param>
+            <param index="29">
+              <value>
+                <![CDATA[Send for investigation]]>
+              </value>
+            </param>
+            <param index="30">
+              <value>
+                <![CDATA[gaurav]]>
+              </value>
+            </param>
+            <param index="31">
+              <value>
+                <![CDATA[demogaurav007]]>
+              </value>
+            </param>
+            <param index="32">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="33">
+              <value>
+                <![CDATA[Near Miss capa Test]]>
+              </value>
+            </param>
+            <param index="34">
+              <value>
+                <![CDATA[gaurav]]>
+              </value>
+            </param>
+            <param index="35">
+              <value>
+                <![CDATA[Low]]>
+              </value>
+            </param>
+            <param index="36">
+              <value>
+                <![CDATA[Investigation Completed & Sent for Cluster EHS Head Review ]]>
+              </value>
+            </param>
+            <param index="37">
+              <value>
+                <![CDATA[Investigation Completed & Sent for Cluster EHS Head Review ]]>
+              </value>
+            </param>
+            <param index="38">
+              <value>
+                <![CDATA[demoakash]]>
+              </value>
+            </param>
+            <param index="39">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="40">
+              <value>
+                <![CDATA[Send for Unit MR Review]]>
+              </value>
+            </param>
+            <param index="41">
+              <value>
+                <![CDATA[Send for Unit MR Review]]>
+              </value>
+            </param>
+            <param index="42">
+              <value>
+                <![CDATA[demodharmesh]]>
+              </value>
+            </param>
+            <param index="43">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="44">
+              <value>
+                <![CDATA[Send for Unit Head Review]]>
+              </value>
+            </param>
+            <param index="45">
+              <value>
+                <![CDATA[Send for Unit Head Review]]>
+              </value>
+            </param>
+            <param index="46">
+              <value>
+                <![CDATA[demomahesh]]>
+              </value>
+            </param>
+            <param index="47">
+              <value>
+                <![CDATA[admin]]>
+              </value>
+            </param>
+            <param index="48">
+              <value>
+                <![CDATA[Approve Investigation]]>
+              </value>
+            </param>
+            <param index="49">
+              <value>
+                <![CDATA[Approve Investigation]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='nav-link toggleMenubar']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}),platform=Windows NT 6.3.9600 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'GK007', ip: '192.168.43.12', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53499}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}), userDataDir=C:\Users\GAURAV\AppData\Local\Temp\scoped_dir9440_669564701}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=81.0.4044.138, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8eabad480e343c892857007d1c76081b
+*** Element info: {Using=xpath, value=//a[@class='nav-link toggleMenubar']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[@class='nav-link toggleMenubar']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}),platform=Windows NT 6.3.9600 x86) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 25 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.1', revision: 'a36b8b1cd5757287168e54b817830adce9b0158d', time: '2016-06-30 19:26:09'
+System info: host: 'GK007', ip: '192.168.43.12', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_152'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{mobileEmulationEnabled=false, timeouts={implicit=0, pageLoad=300000, script=30000}, hasTouchScreen=false, platform=XP, acceptSslCerts=false, goog:chromeOptions={debuggerAddress=localhost:53499}, acceptInsecureCerts=false, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, setWindowRect=true, unexpectedAlertBehaviour=ignore, applicationCacheEnabled=false, rotatable=false, networkConnectionEnabled=false, chrome={chromedriverVersion=81.0.4044.69 (6813546031a4bc83f717a2ef7cd4ac6ec1199132-refs/branch-heads/4044@{#776}), userDataDir=C:\Users\GAURAV\AppData\Local\Temp\scoped_dir9440_669564701}, takesHeapSnapshot=true, pageLoadStrategy=normal, strictFileInteractability=false, databaseEnabled=false, handlesAlerts=true, version=81.0.4044.138, browserConnectionEnabled=false, proxy={}, nativeEvents=true, locationContextEnabled=true, cssSelectorsEnabled=true, webauthn:virtualAuthenticators=true}]
+Session ID: 8eabad480e343c892857007d1c76081b
+*** Element info: {Using=xpath, value=//a[@class='nav-link toggleMenubar']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at com.datadriven.test.Report_Incident_Test.Report_Incident_operator(Report_Incident_Test.java:69)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Schedule_Meeting_cancelled_Test -->
-        <test-method status="PASS" signature="AMTest()[pri:0, instance:com.datadriven.test.MeetingCancelled_Test@1fdc050]" name="AMTest" is-config="true" duration-ms="1590" started-at="2020-05-06T11:35:25Z" finished-at="2020-05-06T11:35:26Z">
+        </test-method> <!-- Report_Incident_operator -->
+        <test-method status="PASS" signature="AMTest()[pri:0, instance:com.datadriven.test.Report_Incident_Test@1fdc050]" name="AMTest" is-config="true" duration-ms="3803" started-at="2020-05-09T11:33:15Z" finished-at="2020-05-09T11:33:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AMTest -->
-      </class> <!-- com.datadriven.test.MeetingCancelled_Test -->
+      </class> <!-- com.datadriven.test.Report_Incident_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
