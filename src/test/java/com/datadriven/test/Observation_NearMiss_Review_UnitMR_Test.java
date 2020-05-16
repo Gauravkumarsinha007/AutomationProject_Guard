@@ -1,6 +1,8 @@
 package com.datadriven.test;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,7 +18,7 @@ import org.testng.annotations.Test;
 
 import com.test.utility.EHSObservation_NearMiss_Util;
 
-public class Observation_NearMiss_Review_DepartmentHead_Test {
+public class Observation_NearMiss_Review_UnitMR_Test {
 	WebDriver driver;
 	
 	@BeforeMethod
@@ -42,7 +44,7 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 	}
 	
 	@Test(dataProvider="GetTestData",enabled=true)
-	public void EHS_Observation_NearMiss_Review_DepartmentHead(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
+	public void EHS_Observation_NearMiss_Review_UnitMR(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
 			String ObservationType,String NoOfPersons,String Descriptionofwhathappened,String ImmediateContainmentAction,String ReportedbyName,String Attachments1,String Attachments2,
 			String Attachments3,String Attachments4,String DepartmentHeadUsername,String DepartmentHeadPassword,String Clickonthat,String AuthorizationAction,String Comment,String UnitMRusername,
 			String UnitMRPassword,String UnitMRAuthorizationaction,String UnitMRComment,String searchemployee,String operatorInvestigationUsername,String operatorInvestigationPassword,
@@ -51,11 +53,12 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 			String AuthorizationActionInvstegationUnitMR,String InvstegationUnitMRComment,String InvstegationUnitHEADUsername,String InvstegationUnitHEADPassword,String AuthorizationActionInvstegationUnitHEAD,
 			String InvstegationUnitHEADComment) throws InterruptedException, AWTException
 	{
+		
 		//Enter User name 
-		driver.findElement(By.id("txtUserName")).sendKeys(DepartmentHeadUsername);
+		driver.findElement(By.id("txtUserName")).sendKeys(UnitMRusername);
 		Thread.sleep(1000);
 		//Enter Password
-		driver.findElement(By.id("txtPassword")).sendKeys(DepartmentHeadPassword);
+		driver.findElement(By.id("txtPassword")).sendKeys(UnitMRPassword);
 		Thread.sleep(1000);
 		//Click on submit
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -81,13 +84,36 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 		
 		//Authorization Action
 		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
-		Authorizationaction.selectByVisibleText(AuthorizationAction);
+		Authorizationaction.selectByVisibleText(UnitMRAuthorizationaction);
 		Thread.sleep(2000);
 		
 		//Comment
-		driver.findElement(By.id("txtComment")).sendKeys(Comment);
+		driver.findElement(By.id("txtComment")).sendKeys(UnitMRComment);
 		Thread.sleep(1000);
 				
+		//Add investigation team member 
+		driver.findElement(By.xpath("//button[@class='btn btn-primary waves-effect waves-light btn-xs']")).click();
+		Thread.sleep(1000);
+		
+		//search employee name 
+		driver.findElement(By.id("txtInvestigationTeamName_value")).sendKeys(searchemployee);
+		Thread.sleep(2000);
+		
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(2000);
+		
+		//save 
+		driver.findElement(By.xpath("//button[@class='btn btn-icon btn-success btn-xs waves-effect waves-light m-r-5']")).click();
+		Thread.sleep(2000);
+		
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+		
 		//Submit 
 		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
 		Thread.sleep(5000);
@@ -95,14 +121,11 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 		driver.close(); // close newly opened window when done with it
 		driver.switchTo().window(parentHandle); // switch back to the original window
 
-		
 	}
-	
 	@AfterMethod
 	public void AMTest() throws InterruptedException
 	{
 		driver.quit();
 		System.out.println("Close browser successfully");
 	}
-
 }

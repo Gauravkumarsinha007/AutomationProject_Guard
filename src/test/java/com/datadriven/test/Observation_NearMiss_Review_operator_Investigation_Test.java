@@ -1,6 +1,8 @@
 package com.datadriven.test;
 
 import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -16,7 +18,8 @@ import org.testng.annotations.Test;
 
 import com.test.utility.EHSObservation_NearMiss_Util;
 
-public class Observation_NearMiss_Review_DepartmentHead_Test {
+public class Observation_NearMiss_Review_operator_Investigation_Test {
+
 	WebDriver driver;
 	
 	@BeforeMethod
@@ -42,7 +45,7 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 	}
 	
 	@Test(dataProvider="GetTestData",enabled=true)
-	public void EHS_Observation_NearMiss_Review_DepartmentHead(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
+	public void EHS_Observation_NearMiss_Review_operator_Investigation(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
 			String ObservationType,String NoOfPersons,String Descriptionofwhathappened,String ImmediateContainmentAction,String ReportedbyName,String Attachments1,String Attachments2,
 			String Attachments3,String Attachments4,String DepartmentHeadUsername,String DepartmentHeadPassword,String Clickonthat,String AuthorizationAction,String Comment,String UnitMRusername,
 			String UnitMRPassword,String UnitMRAuthorizationaction,String UnitMRComment,String searchemployee,String operatorInvestigationUsername,String operatorInvestigationPassword,
@@ -52,42 +55,86 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 			String InvstegationUnitHEADComment) throws InterruptedException, AWTException
 	{
 		//Enter User name 
-		driver.findElement(By.id("txtUserName")).sendKeys(DepartmentHeadUsername);
+		driver.findElement(By.id("txtUserName")).sendKeys(operatorInvestigationUsername);
 		Thread.sleep(1000);
 		//Enter Password
-		driver.findElement(By.id("txtPassword")).sendKeys(DepartmentHeadPassword);
+		driver.findElement(By.id("txtPassword")).sendKeys(operatorInvestigationPassword);
 		Thread.sleep(1000);
 		//Click on submit
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
-		Thread.sleep(10000);
-		
-		//For you Review
-		driver.findElement(By.xpath("//div[contains(@class,'lead-statistics relative two bg-warning')]//i[@class='arrow icofont-arrow-right']")).click();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
+	
 		//Click on that 
 		driver.findElement(By.partialLinkText(Clickonthat)).click();
-		Thread.sleep(5000);
-						
+		Thread.sleep(10000);
+
+		
 		//New window handle
 		String parentHandle = driver.getWindowHandle(); // get the current window handle
 		
 		for (String winHandle : driver.getWindowHandles()) {
-		    driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
+		driver.switchTo().window(winHandle); // switch focus of WebDriver to the next found window handle (that's your newly opened window)
 		}	
 		//code to do something on new window
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
-		//scroll down
-		jse.executeScript("scroll(0, 250);");
 		
+		//Click on Investigation 
+		driver.findElement(By.xpath("//a[@class='st_tab']")).click();
+		Thread.sleep(8000);
+		
+		//Section C : EHS Observation Cause
+		driver.findElement(By.xpath("//span[contains(text(),'Section C : EHS Observation Cause')]")).click();
+		Thread.sleep(2000);
+		
+		//Reason of Failure
+		driver.findElement(By.xpath("//textarea[@name='txtReasonForFailure']")).sendKeys(ReasonofFailure);
+		Thread.sleep(1000);
+		
+		//Section D : IMPROVE & CONTROL (Recommendation(s))
+		driver.findElement(By.xpath("//span[contains(text(),'Section D : IMPROVE & CONTROL (Recommendation(s))')]")).click();
+		Thread.sleep(1000);
+		
+		//Add Action to be Taken
+		driver.findElement(By.xpath("//button[@id='btnAddCAPA551']")).click();
+		Thread.sleep(1000);
+		
+		//Action to be taken 
+		driver.findElement(By.xpath("//textarea[@name='txtTaskDescription']")).sendKeys(Actiontobetaken);
+		Thread.sleep(1000);
+		
+		//Responsibility 
+		driver.findElement(By.xpath("//input[@name='txtResponsible']")).sendKeys(Responsibility);
+		Thread.sleep(2000);
+		
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_DOWN);
+		Thread.sleep(2000);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		Thread.sleep(2000);
+		robot.keyRelease(KeyEvent.VK_TAB);
+		Thread.sleep(2000);
+		
+		//Priority
+		Select priority = new Select(driver.findElement(By.xpath("//select[@name='ddlTaskPriority']")));
+		priority.selectByVisibleText(Priority);
+		Thread.sleep(3000);
+		
+		//Save CAPA
+		driver.findElement(By.xpath("//button[@class='btn btn-icon btn-success btn-xs waves-effect waves-light m-r-5 save-btn']")).click();
+		Thread.sleep(2000);
+	
 		//Authorization Action
 		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
-		Authorizationaction.selectByVisibleText(AuthorizationAction);
+		Authorizationaction.selectByVisibleText(AuthorizationActionoperatorInvestigation);
 		Thread.sleep(2000);
 		
 		//Comment
-		driver.findElement(By.id("txtComment")).sendKeys(Comment);
+		driver.findElement(By.id("txtComment")).sendKeys(CommentoperatorInvestigation);
 		Thread.sleep(1000);
-				
+			
+		//scroll down
+		jse.executeScript("scroll(0, 250);");
+		
 		//Submit 
 		driver.findElement(By.xpath("//button[@class='btn btn-success waves-effect w-md waves-light m-b-5']")).click();
 		Thread.sleep(5000);
@@ -95,7 +142,7 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 		driver.close(); // close newly opened window when done with it
 		driver.switchTo().window(parentHandle); // switch back to the original window
 
-		
+
 	}
 	
 	@AfterMethod
@@ -104,5 +151,4 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 		driver.quit();
 		System.out.println("Close browser successfully");
 	}
-
 }

@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 import com.test.utility.EHSObservation_NearMiss_Util;
 
-public class Observation_NearMiss_Review_DepartmentHead_Test {
+public class Observation_NearMiss_Invstegation_Review_UnitMR_Test {
 	WebDriver driver;
 	
 	@BeforeMethod
@@ -42,7 +42,7 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 	}
 	
 	@Test(dataProvider="GetTestData",enabled=true)
-	public void EHS_Observation_NearMiss_Review_DepartmentHead(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
+	public void EHS_Observation_NearMiss_Invstegation_Review_UnitMR(String UserName,String Password,String SubUnit,String Department,String Contractor,String Area,String ExactLocation,String Severity,
 			String ObservationType,String NoOfPersons,String Descriptionofwhathappened,String ImmediateContainmentAction,String ReportedbyName,String Attachments1,String Attachments2,
 			String Attachments3,String Attachments4,String DepartmentHeadUsername,String DepartmentHeadPassword,String Clickonthat,String AuthorizationAction,String Comment,String UnitMRusername,
 			String UnitMRPassword,String UnitMRAuthorizationaction,String UnitMRComment,String searchemployee,String operatorInvestigationUsername,String operatorInvestigationPassword,
@@ -52,10 +52,10 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 			String InvstegationUnitHEADComment) throws InterruptedException, AWTException
 	{
 		//Enter User name 
-		driver.findElement(By.id("txtUserName")).sendKeys(DepartmentHeadUsername);
+		driver.findElement(By.id("txtUserName")).sendKeys(InvstegationUnitMRUsername);
 		Thread.sleep(1000);
 		//Enter Password
-		driver.findElement(By.id("txtPassword")).sendKeys(DepartmentHeadPassword);
+		driver.findElement(By.id("txtPassword")).sendKeys(InvstegationUnitMRPassword);
 		Thread.sleep(1000);
 		//Click on submit
 		driver.findElement(By.xpath("//button[@type='submit']")).click();
@@ -76,16 +76,21 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 		}	
 		//code to do something on new window
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
+
+		//Click on Investigation 
+		driver.findElement(By.xpath("//a[@class='st_tab']")).click();
+		Thread.sleep(8000);
+					
 		//scroll down
 		jse.executeScript("scroll(0, 250);");
 		
 		//Authorization Action
 		Select Authorizationaction = new Select(driver.findElement(By.id("ddlAction")));
-		Authorizationaction.selectByVisibleText(AuthorizationAction);
+		Authorizationaction.selectByVisibleText(AuthorizationActionInvstegationUnitMR);
 		Thread.sleep(2000);
 		
 		//Comment
-		driver.findElement(By.id("txtComment")).sendKeys(Comment);
+		driver.findElement(By.id("txtComment")).sendKeys(InvstegationUnitMRComment);
 		Thread.sleep(1000);
 				
 		//Submit 
@@ -97,12 +102,11 @@ public class Observation_NearMiss_Review_DepartmentHead_Test {
 
 		
 	}
-	
+
 	@AfterMethod
 	public void AMTest() throws InterruptedException
 	{
 		driver.quit();
 		System.out.println("Close browser successfully");
 	}
-
 }

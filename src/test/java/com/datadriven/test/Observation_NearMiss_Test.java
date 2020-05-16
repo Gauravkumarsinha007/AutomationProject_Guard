@@ -15,7 +15,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.test.utility.EHSObservation_Transfer_Util;
+import com.test.utility.EHSObservation_NearMiss_Util;
 
 public class Observation_NearMiss_Test {
 	WebDriver driver;
@@ -36,7 +36,7 @@ public class Observation_NearMiss_Test {
 	public Iterator<Object[]> GetTestData()
 	{
 		
-		ArrayList<Object[]>testdata=EHSObservation_Transfer_Util.GetDataFromExcel();
+		ArrayList<Object[]>testdata=EHSObservation_NearMiss_Util.GetDataFromExcel();
 		return testdata.iterator();
 		
 		

@@ -538,7 +538,7 @@ public class Near_Miss_Observation_Test {
 		
 	}
 
-
+/**
 	@Test(priority=8,enabled=true)
 	public void EHS_Observation_NearMiss_CAPAassign_Review_departmenthead() throws InterruptedException, AWTException
 	{
@@ -588,6 +588,7 @@ public class Near_Miss_Observation_Test {
 		
 	}
 
+**/
 	@Test(priority=9,enabled=false)
 	public void EHS_Observation_NearMiss_Review_CAPA_Person() throws InterruptedException, AWTException
 	{
